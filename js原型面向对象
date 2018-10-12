@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+ <head>
+  <title>js原型面向对象</title>
+ </head>
+ <body>
+  <header>
+  <p>hello world</p>
+  </header>
+  <script type="text/javascript">
+    /*******************
+	console.log("hello");
+	function SayHello(){//外置方法来共享
+	 alert("Hello,i am"+this.name);
+	};
+	
+	function Person(name){
+	 this.name=name;
+	 this.SayHello=SayHello;
+	};
+	
+	Person.prototype.SayHello=function(){//原型添加方法，共享而关联性强
+	 alert("Hello,i am"+this.name);
+	};
+	
+	var BillGates=new Person("Bill Gates");
+	var SteveJobs=new Person("Steve Jobs");
+	
+	alert(BillGates.SayHello==SteveJobs.SayHello);//显示true****
+	*//////////////////////////////////////////////
+	/*******原型继承**********************************
+	function Person(name){//基类构造函数
+	 this.name=name;
+	};
+	
+	Person.prototype.SayHello=function(){//给基类的构造函数的prototype添加方法
+	 alert("Hello, i am "+this.name);
+	};
+	
+	function Employee(name,salary){//子类构造函数
+	 Person.call(this,name);//调用基类构造函数
+	 this.salary=salary;
+	};
+	
+	Employee.prototype=new Person();//建一个基类的对象作为子类原型的原型
+	Employee.prototype.ShowMeMoney=function(){//给子类构造函数的prototype添加方法
+	 alert(this.name+"$"+this.salary);
+	};
+	
+	var XiaoMing=new Person("Xiao Ming");//创建基类的对象
+	var XiaoHong=new Employee("Xiao Hong ",113);//创建子类的对象
+	
+	XiaoMing.SayHello();
+	XiaoHong.SayHello();
+	XiaoHong.ShowMeMoney();
+	*////////////////////////////////
+	 
+	/*******************
+	  
+	*////////////////////////
+	
+  </script>
+ </body>
+ <footer>
+   
+ </footer>
+ 
+</html>
